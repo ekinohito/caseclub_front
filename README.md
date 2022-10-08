@@ -1,4 +1,14 @@
+# Bauman Case Club Frontend
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Useful scripts
+
+Generates axios client (based on [localhost:8000/openapi.json](localhost:8000/openapi.json)):
+
+```bash
+yarn run generate-client
+```
 
 ## Getting Started
 
