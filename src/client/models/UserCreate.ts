@@ -5,7 +5,6 @@
 export type UserCreate = {
     email: string;
     name: string;
-    picture?: string;
     password: string;
 };
 

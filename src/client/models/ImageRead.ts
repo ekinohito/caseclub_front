@@ -2,9 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type UserRead = {
-    email: string;
-    name: string;
+export type ImageRead = {
     id: number;
 };
 

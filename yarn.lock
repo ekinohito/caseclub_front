@@ -627,6 +627,11 @@ deep-is@^0.1.3:
   resolved "https://npm.yandex-team.ru/deep-is/-/deep-is-0.1.4.tgz?rbtorrent=57669dc28a2e33202e80c16a878e62fe6af40f86#a6f2dce612fadd2ef1f519b73551f17e85199831"
   integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
 
+deepmerge@^2.1.1:
+  version "2.2.1"
+  resolved "https://npm.yandex-team.ru/deepmerge/-/deepmerge-2.2.1.tgz?rbtorrent=d98756781d55a296c737972c14d0160685bb8e4e#5d3ff22a01c00f645405a2fbc17d0778a1801170"
+  integrity sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==
+
 define-properties@^1.1.3, define-properties@^1.1.4:
   version "1.1.4"
   resolved "https://npm.yandex-team.ru/define-properties/-/define-properties-1.1.4.tgz?rbtorrent=9bed22f12418ca9b4b11a330489c780dfa4a6f29#0b14d7bd7fbeb2f3572c3a7eda80ea5d57fb05b1"
@@ -1057,6 +1062,19 @@ form-data@^4.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+formik@^2.2.9:
+  version "2.2.9"
+  resolved "https://npm.yandex-team.ru/formik/-/formik-2.2.9.tgz?rbtorrent=d888f9c2a3ba0808b3c4f038fd97f1bb193d7a82#8594ba9c5e2e5cf1f42c5704128e119fc46232d0"
+  integrity sha512-LQLcISMmf1r5at4/gyJigGn0gOwFbeEAlji+N9InZF6LIMXnFNkO42sCI8Jt84YZggpD4cPWObAZaxpEFtSzNA==
+  dependencies:
+    deepmerge "^2.1.1"
+    hoist-non-react-statics "^3.3.0"
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    react-fast-compare "^2.0.1"
+    tiny-warning "^1.0.2"
+    tslib "^1.10.0"
+
 fraction.js@^4.2.0:
   version "4.2.0"
   resolved "https://npm.yandex-team.ru/fraction.js/-/fraction.js-4.2.0.tgz?rbtorrent=c1cf431fcfbc98826ec5af5c7eb682e1f46a677d#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
@@ -1232,6 +1250,13 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
+
+hoist-non-react-statics@^3.3.0:
+  version "3.3.2"
+  resolved "https://npm.yandex-team.ru/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz?rbtorrent=43ab0056091589d5e8cb9496177e6ea8c613d98b#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
 
 hyphenate-style-name@^1.0.2:
   version "1.0.4"
@@ -1496,10 +1521,20 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://npm.yandex-team.ru/lodash-es/-/lodash-es-4.17.21.tgz?rbtorrent=03f1e4a728fdfbb0678d57d72e975064343b8e97#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://npm.yandex-team.ru/lodash.merge/-/lodash.merge-4.6.2.tgz?rbtorrent=82906d7bb307fb4b9769b15821fd55eaca29b9f1#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://npm.yandex-team.ru/lodash/-/lodash-4.17.21.tgz?rbtorrent=921df2c64b0e0e10268c2e02b54834c8601e493d#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -1897,7 +1932,12 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-is@^16.13.1:
+react-fast-compare@^2.0.1:
+  version "2.0.4"
+  resolved "https://npm.yandex-team.ru/react-fast-compare/-/react-fast-compare-2.0.4.tgz?rbtorrent=e63280ca899c58d86b6ddae2297b590fd34af33e#e84b4d455b0fec113e0402c329352715196f81f9"
+  integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://npm.yandex-team.ru/react-is/-/react-is-16.13.1.tgz?rbtorrent=7f27902ce96c964630fc52cb9747f3f63152bed6#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -2243,6 +2283,11 @@ throttle-debounce@^3.0.1:
   resolved "https://npm.yandex-team.ru/throttle-debounce/-/throttle-debounce-3.0.1.tgz?rbtorrent=c2abb2283bc0ed3c0b87e245d8ffdf56db0e78d7#32f94d84dfa894f786c9a1f290e7a645b6a19abb"
   integrity sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==
 
+tiny-warning@^1.0.2:
+  version "1.0.3"
+  resolved "https://npm.yandex-team.ru/tiny-warning/-/tiny-warning-1.0.3.tgz?rbtorrent=e25ed2f9169820e7b306ed696564d5108c9ef194#94a30db453df4c643d0fd566060d60a875d84754"
+  integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://npm.yandex-team.ru/to-regex-range/-/to-regex-range-5.0.1.tgz?rbtorrent=9c494e247bd2815d7991a87d6c0fa999f42b3641#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
@@ -2270,7 +2315,7 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@^1.8.1:
+tslib@^1.10.0, tslib@^1.8.1:
   version "1.14.1"
   resolved "https://npm.yandex-team.ru/tslib/-/tslib-1.14.1.tgz?rbtorrent=ee282d12ea3f6d275bd7888e15f8c6500d1a3f7e#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
@@ -2401,3 +2446,10 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://npm.yandex-team.ru/yocto-queue/-/yocto-queue-0.1.0.tgz?rbtorrent=0258e7cf3d257107b97e0ecb3ab9e4b0d900e7a2#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zustand@^4.1.1:
+  version "4.1.1"
+  resolved "https://npm.yandex-team.ru/zustand/-/zustand-4.1.1.tgz?rbtorrent=174cb6fb33566b100f4adc1ad60339e80cb8548c#5a61cc755a002df5f041840a414ae6e9a99ee22b"
+  integrity sha512-h4F3WMqsZgvvaE0n3lThx4MM81Ls9xebjvrABNzf5+jb3/03YjNTSgZXeyrvXDArMeV9untvWXRw1tY+ntPYbA==
+  dependencies:
+    use-sync-external-store "1.2.0"
