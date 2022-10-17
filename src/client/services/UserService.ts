@@ -56,14 +56,14 @@ export class UserService {
     }
 
     /**
-     * Secret
-     * @returns any Successful Response
+     * Current
+     * @returns UserRead Successful Response
      * @throws ApiError
      */
-    public static secretUserSecretGet(): CancelablePromise<any> {
+    public static currentUserCurrentGet(): CancelablePromise<UserRead> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/secret',
+            url: '/user/current',
         });
     }
 

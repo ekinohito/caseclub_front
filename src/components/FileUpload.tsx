@@ -1,33 +1,27 @@
-import { useEffect, useMemo, useRef, useState } from "react"
+import { ReactNode, useEffect, useMemo, useRef, useState } from "react"
 import { ImagesService } from "../client/services/ImagesService"
-import { useAttachmentStore } from "../state"
 import { Button } from "./Button"
 
 interface Props {
+    onFileUploaded?: (id: number) => void
+    children?: ReactNode
 }
-export function FileUpload({}: Props) {
+export function FileUpload({onFileUploaded, children}: Props) {
     const ref = useRef<HTMLInputElement>(null)
-    const [file, setFile] = useState<File | null>(null)
-    const {attachments, addAttachment} = useAttachmentStore()
     const chooseHandler = () => {
         ref.current?.click()
     }
 
-    const inputHandler = () => {
-        console.log(ref.current?.files?.[0])
-        setFile(ref.current?.files?.[0] ?? null)
-    }
-
-    const uploadHandler = async () => {
+    const inputHandler = async () => {
+        const file = ref.current?.files?.[0] ?? null
         if (file) {
             const {id} = await ImagesService.uploadImageImagesPost({file})
-            addAttachment(id)
+            onFileUploaded?.(id)
         }
     }
     
     return <div>
         <input type="file" ref={ref} className="hidden" onInput={inputHandler}></input>
-        <Button onClick={chooseHandler}>Choose file</Button>
-        <Button onClick={uploadHandler} className={`${file ? '' : 'hidden'}`}>Upload</Button>
+        <Button type="button" color="blue" onClick={chooseHandler}>{children}</Button>
     </div>
 }

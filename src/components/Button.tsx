@@ -1,9 +1,26 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes } from "react";
+import clsx from "clsx";
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+    color?: 'white' | 'black' | 'blue' | 'red'
 }
-export function Button({onClick, children, className, ...rest}: Props) {
-    return <button onClick={onClick} className={`px-4 py-2 ${className}`} {...rest}>
-        {children}
-    </button>
+export function Button({ color="white", onClick, children, className, ...rest }: Props) {
+    return (
+        <button
+            onClick={onClick}
+            className={clsx(
+                "px-4 py-2 rounded-md bg-opacity-5 hover:bg-opacity-10 transition-all",
+                {
+                    white: "bg-white",
+                    black: "bg-black",
+                    blue: "bg-blue-600",
+                    red: "bg-red-600"
+                }[color],
+                className
+            )}
+            {...rest}
+        >
+            {children}
+        </button>
+    );
 }

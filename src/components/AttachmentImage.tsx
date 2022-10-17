@@ -1,11 +1,11 @@
 import { HTMLAttributes } from "react"
 import { OpenAPI } from "../client"
-import { useAttachmentStore } from "../state"
+import clsx from "clsx"
 
 interface Props extends HTMLAttributes<HTMLImageElement> {
     attachmentId: number
 }
-export function AttachmentImage({attachmentId, ...rest}: Props) {
+export function AttachmentImage({attachmentId, className, ...rest}: Props) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={`${OpenAPI.BASE}/images/${attachmentId}`} alt="attachment" {...rest}/>
+    return <img className={clsx('object-cover rounded-md', className)} src={`${OpenAPI.BASE}/images/${attachmentId}`} alt="attachment" {...rest}/>
 }

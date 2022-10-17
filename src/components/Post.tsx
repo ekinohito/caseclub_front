@@ -1,7 +1,9 @@
 import { useBoolean } from "react-use";
 import { PostRead, PostService } from "../client";
-import { useAuthStore } from "../state";
+import { useAuth } from "../hooks/useAuth";
+import { AttachmentImage } from "./AttachmentImage";
 import { Button } from "./Button";
+import { Paper } from "./Paper";
 
 interface Props {
     post: PostRead
@@ -11,13 +13,20 @@ export function Post({post}: Props) {
     const [wasClicked, setWasClicked] = useBoolean(false)
     const isLiked = !post.is_liked === wasClicked
     const likesCount = post.likes + (isLiked ? 1 : -1) * (wasClicked ? 1 : 0)
-    const {isAuthenticated} = useAuthStore()
-    const onClick = isAuthenticated ? () => {
+    const authId = useAuth()
+    const onClick = authId ? () => {
         PostService.likePostPostIdLikePost(post.id, isLiked)
         setWasClicked(!wasClicked)
     } : () => {}
-    return <div className="bg-slate-50 p-4 h-32 rounded-lg">
-        {post.text} <br/>
-        <Button onClick={onClick} className={`transition-all ${isLiked ? 'text-blue-500 font-bold' : ''}`}>{likesCount} ▲</Button>
-    </div>
+    return <Paper>
+        <p className="text-lg mb-4">{post.text}</p>
+        <div className="flex flex-row w-full max-h-80 space-x-2">
+            {post.images.map(image => <div key={image} className="flex-1 h-80">
+                <AttachmentImage attachmentId={image} className="w-full h-full"/>
+            </div>)}
+        </div>
+        <Button onClick={onClick} className={`transition-all text-xl ${isLiked ? 'text-blue-500' : ''}`}>
+            {isLiked ? '♥' : '♡'} {likesCount}
+        </Button>
+    </Paper>
 }
