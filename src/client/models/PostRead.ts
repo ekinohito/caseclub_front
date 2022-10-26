@@ -8,5 +8,6 @@ export type PostRead = {
     likes: number;
     is_liked?: boolean;
     images: Array<number>;
+    created_at: string;
 };
 

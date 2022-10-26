@@ -4,6 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 import { AttachmentImage } from "./AttachmentImage";
 import { Button } from "./Button";
 import { Paper } from "./Paper";
+import { DateTime } from "luxon"
 
 interface Props {
     post: PostRead
@@ -19,6 +20,7 @@ export function Post({post}: Props) {
         setWasClicked(!wasClicked)
     } : () => {}
     return <Paper>
+        <p className="text-blue-300 text-sm mb-2">{DateTime.fromISO(post.created_at, {zone: 'utc'}).toRelative({locale: "ru"})}</p>
         <p className="text-lg mb-4">{post.text}</p>
         <div className="flex flex-row w-full max-h-80 space-x-2">
             {post.images.map(image => <div key={image} className="flex-1 h-80">

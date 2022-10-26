@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from "formik";
+import { Field, Form, Formik } from "formik";
 import { AuthService, Body_login_auth_token_post, OpenAPI, UserCreate, UserService } from "../../client";
 import { useAuthStore } from "../../state";
 import { Button } from "../Button";
@@ -21,7 +21,7 @@ export function AuthUserForm({}: Props) {
                     console.log(access_token);
                     OpenAPI.TOKEN = access_token
                     const user = await UserService.currentUserCurrentGet()
-                    setAuthId(user)
+                    setAuthId(user, access_token)
                 }}
             >
                 {() => (

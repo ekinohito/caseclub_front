@@ -1,21 +1,24 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import { PostRead, UserRead } from "./client";
+import { EventRead } from "./client/models/EventRead";
 
 interface AuthState {
     authId?: UserRead;
-    setAuthId: (id: UserRead) => void;
+    token?: string;
+    setAuthId: (id: UserRead, token: string) => void;
     resetAuthId: () => void;
 }
 export const useAuthStore = create(
     persist<AuthState>(
         (set) => ({
             authId: undefined,
-            setAuthId(id) {
-                set({ authId: id });
+            token: undefined,
+            setAuthId(id, token) {
+                set({ authId: id, token });
             },
             resetAuthId() {
-                set({ authId: undefined });
+                set({ authId: undefined, token: undefined });
             },
         }),
         { name: "auth" }
@@ -29,10 +32,26 @@ interface PostState {
 }
 export const usePostStore = create<PostState>((set) => ({
     posts: [],
-    setPosts: (new_posts) => {
+    setPosts(new_posts) {
         set({ posts: new_posts });
     },
-    addPost: (new_post) => {
+    addPost(new_post) {
         set((state) => ({ posts: [new_post, ...state.posts] }));
+    },
+}));
+
+interface EventState {
+    events: EventRead[];
+    setEvents: (events: EventRead[]) => void;
+    clearEvents: () => void;
+}
+
+export const useEventStore = create<EventState>((set) => ({
+    events: [],
+    setEvents(events) {
+        set({ events });
+    },
+    clearEvents() {
+        set({ events: [] })
     },
 }));
