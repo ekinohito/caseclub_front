@@ -4,5 +4,6 @@
 
 export type PostCreate = {
     text: string;
+    images: Array<number>;
 };
 

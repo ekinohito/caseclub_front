@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Body_create_post_post__post } from '../models/Body_create_post_post__post';
+import type { PostCreate } from '../models/PostCreate';
 import type { PostEdit } from '../models/PostEdit';
 import type { PostRead } from '../models/PostRead';
 
@@ -42,7 +42,7 @@ export class PostService {
      * @throws ApiError
      */
     public static createPostPostPost(
-        requestBody: Body_create_post_post__post,
+        requestBody: PostCreate,
     ): CancelablePromise<PostRead> {
         return __request(OpenAPI, {
             method: 'POST',

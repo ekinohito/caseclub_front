@@ -55,4 +55,46 @@ export class EventService {
         });
     }
 
+    /**
+     * Attend Event
+     * @param id
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static attendEventEventIdAttendPost(
+        id: number,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/event/{id}/attend',
+            path: {
+                'id': id,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Attend Event
+     * @param id
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static attendEventEventIdStopAttendPost(
+        id: number,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/event/{id}/stop_attend',
+            path: {
+                'id': id,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
 }

@@ -6,7 +6,6 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
-export type { Body_create_post_post__post } from './models/Body_create_post_post__post';
 export type { Body_login_auth_token_post } from './models/Body_login_auth_token_post';
 export type { Body_upload_image_images__post } from './models/Body_upload_image_images__post';
 export type { EventRead } from './models/EventRead';
@@ -21,7 +20,9 @@ export type { UserRead } from './models/UserRead';
 export type { ValidationError } from './models/ValidationError';
 
 export { AuthService } from './services/AuthService';
+export { DefaultService } from './services/DefaultService';
 export { EventService } from './services/EventService';
 export { ImagesService } from './services/ImagesService';
+export { ManagementService } from './services/ManagementService';
 export { PostService } from './services/PostService';
 export { UserService } from './services/UserService';

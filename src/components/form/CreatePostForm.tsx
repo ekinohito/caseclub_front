@@ -23,7 +23,7 @@ export function CreatePostForm({}: Props) {
                     const { images, ...post } = values;
                     const newPost = await PostService.createPostPostPost({
                         images,
-                        post,
+                        ...post,
                     });
                     
                     addPost(newPost)

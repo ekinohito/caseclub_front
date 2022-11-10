@@ -9,5 +9,6 @@ export type EventRead = {
     start_date: string;
     end_date: string;
     id: number;
+    is_attended?: boolean;
 };
 
