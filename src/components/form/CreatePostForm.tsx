@@ -12,7 +12,7 @@ interface Props {}
 export function CreatePostForm({}: Props) {
     const addPost = usePostStore(state => state.addPost)
     return (
-        <Paper className="w-full max-w-lg">
+        <Paper className="w-full">
             <Formik<PostCreate & { images: number[] }>
                 initialValues={{
                     text: "",

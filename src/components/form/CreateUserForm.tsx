@@ -7,7 +7,7 @@ interface Props {}
 
 export function CreateUserForm({}: Props) {
     return (
-        <Paper className="w-full max-w-lg">
+        <Paper className="w-full">
             <Formik<UserCreate>
                 initialValues={{
                     email: "",

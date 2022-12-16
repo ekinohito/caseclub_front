@@ -14,7 +14,6 @@ import { useAuth } from "../src/hooks/useAuth";
 import { useAuthStore, useEventStore, usePostStore } from "../src/state";
 
 const Feed: NextPage = () => {
-    // const isAuthorized = useAuth()
     const events = useEventStore(state => state.events)
     return (
     <>
